@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXToolbar?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="root" onMouseDragged="#drag" onMousePressed="#press" prefHeight="639.0" prefWidth="1150.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.B">
+   <children>
+      <AnchorPane prefHeight="639.0" prefWidth="1150.0" style="-fx-background-color: #027ac0;">
+         <children>
+            <AnchorPane fx:id="frame" layoutX="221.0" layoutY="39.0" prefHeight="601.0" prefWidth="929.0" />
+            <AnchorPane layoutY="39.0" prefHeight="601.0" prefWidth="218.0">
+               <children>
+                  <AnchorPane prefHeight="601.0" prefWidth="207.0" style="-fx-background-color: #121627;">
+                     <children>
+                        <VBox prefHeight="601.0" prefWidth="218.0">
+                           <children>
+                              <Pane prefHeight="160.0" prefWidth="218.0" style="-fx-border-color: #000000;">
+                                 <children>
+                                    <VBox alignment="CENTER" layoutX="62.0" layoutY="14.0" prefHeight="75.0" prefWidth="81.0">
+                                       <children>
+                                          <ImageView fitHeight="76.0" fitWidth="93.0" pickOnBounds="true" preserveRatio="true" />
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="CENTER" layoutX="17.0" layoutY="107.0" prefHeight="46.0" prefWidth="182.0" />
+                                 </children></Pane>
+                              <Separator prefWidth="200.0" visible="false" />
+                              <Pane layoutX="10.0" layoutY="10.0" prefHeight="56.0" prefWidth="206.0" styleClass="nav-button" stylesheets="@../CSS/jarfi.css">
+                                 <children>
+                                    <HBox layoutX="10.0" prefHeight="56.0" prefWidth="207.0" style="-fx-background-color: #121627;">
+                                       <children>
+                                          <JFXButton alignment="BASELINE_LEFT" onAction="#dash" prefHeight="56.0" prefWidth="207.0" style="-fx-border-color: #121627;" text="DASHBOARD" textFill="WHITE">
+                                             <graphic>
+                                                <MaterialDesignIconView fill="WHITE" glyphName="VIEW_DASHBOARD" size="20.0" />
+                                             </graphic>
+                                             <font>
+                                                <Font name="System Bold" size="13.0" />
+                                             </font>
+                                          </JFXButton>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </Pane>
+                              <Separator layoutX="10.0" layoutY="170.0" prefWidth="200.0" visible="false" />
+                              <Pane layoutX="10.0" layoutY="173.0" prefHeight="56.0" prefWidth="206.0" styleClass="nav-button" stylesheets="@../CSS/jarfi.css">
+                                 <children>
+                                    <HBox layoutX="10.0" prefHeight="56.0" prefWidth="207.0" style="-fx-background-color: #121627;">
+                                       <children>
+                                          <JFXButton alignment="BASELINE_LEFT" onAction="#dtPengarang" prefHeight="56.0" prefWidth="210.0" style="-fx-background-color: #121627;" text="DATA PENGARANG" textFill="WHITE">
+                                             <graphic>
+                                                <MaterialDesignIconView fill="WHITE" glyphName="ACCOUNT_CONVERT" size="20.0" />
+                                             </graphic>
+                                             <font>
+                                                <Font name="System Bold" size="13.0" />
+                                             </font>
+                                          </JFXButton>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </Pane>
+                              <Separator layoutX="10.0" layoutY="229.0" prefWidth="200.0" visible="false" />
+                              <Pane layoutX="10.0" layoutY="232.0" prefHeight="56.0" prefWidth="218.0" styleClass="nav-button" stylesheets="@../CSS/jarfi.css">
+                                 <children>
+                                    <HBox layoutX="10.0" prefHeight="56.0" prefWidth="207.0">
+                                       <children>
+                                          <JFXButton alignment="BASELINE_LEFT" onAction="#dtPenerbit" prefHeight="56.0" prefWidth="207.0" style="-fx-background-color: #121627; -fx-border-color: #121627;" text="DATA PENERBIT" textFill="WHITE">
+                                             <graphic>
+                                                <MaterialDesignIconView fill="WHITE" glyphName="BULLETIN_BOARD" size="20.0" />
+                                             </graphic>
+                                             <font>
+                                                <Font name="System Bold" size="13.0" />
+                                             </font>
+                                          </JFXButton>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </Pane>
+                              <Separator layoutX="10.0" layoutY="288.0" prefWidth="200.0" visible="false" />
+                              <Pane layoutX="10.0" layoutY="291.0" prefHeight="56.0" prefWidth="218.0" styleClass="nav-button" stylesheets="@../CSS/jarfi.css">
+                                 <children>
+                                    <HBox layoutX="10.0" prefHeight="56.0" prefWidth="207.0">
+                                       <children>
+                                          <JFXButton alignment="BASELINE_LEFT" onAction="#dtBuku" prefHeight="56.0" prefWidth="207.0" style="-fx-background-color: #121627; -fx-border-color: #121627;" text="DATA BUKU" textFill="WHITE">
+                                             <graphic>
+                                                <MaterialDesignIconView fill="WHITE" glyphName="BOOK_OPEN_VARIANT" size="20.0" />
+                                             </graphic>
+                                             <font>
+                                                <Font name="System Bold" size="13.0" />
+                                             </font>
+                                          </JFXButton>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </Pane>
+                              <Separator layoutX="10.0" layoutY="347.0" prefWidth="200.0" visible="false" />
+                              <Pane layoutX="10.0" layoutY="350.0" prefHeight="56.0" prefWidth="218.0" styleClass="nav-button" stylesheets="@../CSS/jarfi.css">
+                                 <children>
+                                    <HBox layoutX="10.0" prefHeight="56.0" prefWidth="207.0">
+                                       <children>
+                                          <JFXButton alignment="BASELINE_LEFT" onAction="#dtLaporan" prefHeight="56.0" prefWidth="207.0" style="-fx-background-color: #121627; -fx-border-color: #121627;" text="LAPORAN" textFill="WHITE">
+                                             <graphic>
+                                                <MaterialDesignIconView fill="WHITE" glyphName="PRINTER" size="20.0" />
+                                             </graphic>
+                                             <font>
+                                                <Font name="System Bold" size="13.0" />
+                                             </font>
+                                          </JFXButton>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </Pane>
+                              <Separator layoutX="10.0" layoutY="406.0" prefWidth="200.0" visible="false" />
+                              <Pane layoutX="10.0" layoutY="409.0" prefHeight="56.0" prefWidth="225.0" styleClass="nav-button" stylesheets="@../CSS/jarfi.css">
+                                 <children>
+                                    <HBox layoutX="10.0" prefHeight="56.0" prefWidth="207.0">
+                                       <children>
+                                          <JFXButton alignment="BASELINE_LEFT" prefHeight="56.0" prefWidth="207.0" style="-fx-background-color: #121627; -fx-border-color: #121627;" text="PENGATURAN AKUN" textFill="WHITE">
+                                             <graphic>
+                                                <MaterialDesignIconView fill="WHITE" glyphName="ACCOUNT_KEY" size="20.0" />
+                                             </graphic>
+                                             <font>
+                                                <Font name="System Bold" size="13.0" />
+                                             </font>
+                                          </JFXButton>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </Pane>
+                              <Separator layoutX="10.0" layoutY="465.0" prefWidth="200.0" visible="false" />
+                              <Pane layoutX="10.0" layoutY="468.0" prefHeight="56.0" prefWidth="218.0" styleClass="nav-button" stylesheets="@../CSS/jarfi.css">
+                                 <children>
+                                    <HBox layoutX="10.0" prefHeight="56.0" prefWidth="207.0">
+                                       <children>
+                                          <JFXButton alignment="BASELINE_LEFT" prefHeight="56.0" prefWidth="207.0" style="-fx-background-color: #121627; -fx-border-color: #121627;" text="LOGOUT APLIKASI" textFill="WHITE">
+                                             <graphic>
+                                                <MaterialDesignIconView fill="WHITE" glyphName="LOGOUT" size="20.0" />
+                                             </graphic>
+                                             <font>
+                                                <Font name="System Bold" size="13.0" />
+                                             </font>
+                                          </JFXButton>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </Pane>
+                              <Separator layoutX="10.0" layoutY="524.0" prefWidth="200.0" visible="false" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </children></AnchorPane>
+            <JFXToolbar prefHeight="39.0" prefWidth="1150.0" style="-fx-background-color: #000000;">
+               <right>
+                  <HBox prefHeight="39.0" prefWidth="70.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <JFXButton contentDisplay="GRAPHIC_ONLY" onMouseClicked="#minimize" prefHeight="39.0" prefWidth="40.0">
+                           <graphic>
+                              <MaterialDesignIconView fill="WHITE" glyphName="WINDOW_MINIMIZE" size="22.0" />
+                           </graphic>
+                        </JFXButton>
+                        <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="10.0" layoutY="10.0" onMouseClicked="#close" prefHeight="39.0" prefWidth="51.0">
+                           <graphic>
+                              <MaterialDesignIconView fill="WHITE" glyphName="WINDOW_CLOSE" size="22.0" />
+                           </graphic>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+               </right>
+               <left>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Separator orientation="VERTICAL" prefHeight="200.0" visible="false" />
+                        <MaterialDesignIconView fill="WHITE" glyphName="LIBRARY_BOOKS" size="24.0" wrappingWidth="43.0" />
+                     </children>
+                  </HBox>
+               </left>
+            </JFXToolbar>
+            <Separator layoutX="218.0" layoutY="39.0" opacity="0.29" orientation="VERTICAL" prefHeight="601.0" prefWidth="6.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

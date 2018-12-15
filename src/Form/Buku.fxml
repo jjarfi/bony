@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="601.0" prefWidth="929.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Buku">
+   <children>
+      <AnchorPane prefHeight="601.0" prefWidth="929.0" style="-fx-background-color: #027ac0;">
+         <children>
+            <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="573.0" prefWidth="902.0" style="-fx-background-color: #ffffff;">
+               <children>
+                  <Pane layoutX="8.0" layoutY="34.0" prefHeight="532.0" prefWidth="314.0" style="-fx-border-color: #000000; -fx-background-color: #000000;">
+                     <children>
+                        <Pane layoutY="55.0" prefHeight="478.0" prefWidth="314.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000;">
+                           <children>
+                              <JFXButton layoutX="8.0" layoutY="425.0" onAction="#btnsimpan" prefHeight="41.0" prefWidth="89.0" styleClass="nav-button" stylesheets="@../CSS/button.css" text="Simpan" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton layoutX="111.0" layoutY="425.0" onAction="#btnUpdate" prefHeight="41.0" prefWidth="89.0" styleClass="nav-button" stylesheets="@../CSS/button.css" text="Update" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton layoutX="211.0" layoutY="425.0" onAction="#btnDelete" prefHeight="41.0" prefWidth="89.0" styleClass="nav-button" stylesheets="@../CSS/button.css" text="Hapus" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </JFXButton>
+                              <ScrollPane layoutX="2.0" layoutY="4.0" prefHeight="410.0" prefWidth="308.0">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="660.0" prefWidth="289.0" style="-fx-background-color: #ffffff;">
+                                       <children>
+                                          <VBox layoutX="3.0" layoutY="14.0" prefHeight="660.0" prefWidth="287.0" style="-fx-background-color: #ffffff;">
+                                             <children>
+                                                <VBox prefHeight="660.0" prefWidth="280.0">
+                                                   <children>
+                                                      <Label prefHeight="28.0" prefWidth="62.0" text="ID Buku">
+                                                         <font>
+                                                            <Font name="System Bold" size="13.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <TextField fx:id="idbuku" prefHeight="40.0" prefWidth="287.0" />
+                                                      <Pane prefHeight="12.0" prefWidth="287.0" />
+                                                      <Label layoutX="10.0" layoutY="10.0" prefHeight="28.0" prefWidth="84.0" text="Judul Buku">
+                                                         <font>
+                                                            <Font name="System Bold" size="13.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <TextField fx:id="judul" layoutX="10.0" layoutY="38.0" prefHeight="40.0" prefWidth="287.0" />
+                                                      <Pane layoutX="10.0" layoutY="78.0" prefHeight="12.0" prefWidth="287.0" />
+                                                      <Label layoutX="10.0" layoutY="90.0" prefHeight="28.0" prefWidth="84.0" text="ID Penerbit">
+                                                         <font>
+                                                            <Font name="System Bold" size="13.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <ComboBox fx:id="idpenerbit" onAction="#loadKDPenerbit" onMouseClicked="#loadnamapenerbit" prefHeight="39.0" prefWidth="288.0" promptText="Silahkan Pilih" />
+                                                      <Pane layoutX="10.0" layoutY="158.0" prefHeight="4.0" prefWidth="287.0" />
+                                                      <TextField fx:id="namapenerbit" layoutX="10.0" layoutY="118.0" prefHeight="40.0" prefWidth="287.0" />
+                                                      <Pane layoutX="10.0" layoutY="158.0" prefHeight="12.0" prefWidth="287.0" />
+                                                      <Label layoutX="10.0" layoutY="170.0" prefHeight="28.0" prefWidth="113.0" text="ID Pengarang">
+                                                         <font>
+                                                            <Font name="System Bold" size="13.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <ComboBox fx:id="idpengarang" layoutX="10.0" layoutY="198.0" onAction="#loadKDPengarang" onMouseClicked="#loadnamapengarang" prefHeight="39.0" prefWidth="288.0" promptText="Silahkan Pilih" />
+                                                      <Pane layoutX="10.0" layoutY="237.0" prefHeight="4.0" prefWidth="287.0" />
+                                                      <TextField fx:id="namapengarang" layoutX="10.0" layoutY="241.0" prefHeight="40.0" prefWidth="287.0" />
+                                                      <Pane layoutX="10.0" layoutY="279.0" prefHeight="12.0" prefWidth="287.0" />
+                                                      <Label layoutX="10.0" layoutY="293.0" prefHeight="28.0" prefWidth="113.0" text="Tahun Buku">
+                                                         <font>
+                                                            <Font name="System Bold" size="13.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <DatePicker fx:id="tgl" prefHeight="41.0" prefWidth="293.0" />
+                                                      <Pane layoutX="10.0" layoutY="404.0" prefHeight="12.0" prefWidth="287.0" />
+                                                      <Label layoutX="10.0" layoutY="416.0" prefHeight="28.0" prefWidth="113.0" text="Jumlah Buku">
+                                                         <font>
+                                                            <Font name="System Bold" size="13.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Spinner fx:id="jumlah" prefHeight="41.0" prefWidth="293.0" />
+                                                      <Pane layoutX="10.0" layoutY="485.0" prefHeight="12.0" prefWidth="287.0" />
+                                                      <Label layoutX="10.0" layoutY="416.0" prefHeight="28.0" prefWidth="170.0" text="Tanggal Pengadaan">
+                                                         <font>
+                                                            <Font name="System Bold" size="13.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <DatePicker fx:id="tglpengadaan" layoutX="10.0" layoutY="444.0" prefHeight="41.0" prefWidth="293.0" />
+                                                   </children>
+                                                </VBox>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </AnchorPane>
+                                </content>
+                              </ScrollPane>
+                           </children>
+                        </Pane>
+                        <Label layoutX="14.0" layoutY="14.0" prefHeight="31.0" prefWidth="169.0" text="DATA BUKU" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <ScrollPane layoutX="329.0" layoutY="87.0" prefHeight="478.0" prefWidth="566.0">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="476.0" prefWidth="1090.0">
+                           <children>
+                              <TableView fx:id="tabdata" onMouseClicked="#setdariTabel" prefHeight="478.0" prefWidth="1090.0" tableMenuButtonVisible="true">
+                                <columns>
+                                  <TableColumn fx:id="kolidbuku" prefWidth="127.0" text="ID Buku" />
+                                  <TableColumn fx:id="koljudulbuku" prefWidth="194.0" text="Judul Buku" />
+                                    <TableColumn fx:id="kolidpenerbit" prefWidth="147.0" text="ID Penerbit" />
+                                    <TableColumn fx:id="kolidpengarang" prefWidth="147.0" text="ID Pengarang" />
+                                    <TableColumn fx:id="koltahunbuku" prefWidth="147.0" text="Tahun Buku" />
+                                    <TableColumn fx:id="koljumlahbuku" prefWidth="147.0" text="Jumlah Buku" />
+                                    <TableColumn fx:id="koltanggal" prefWidth="167.0" text="Tanggal Pengadaan" />
+                                </columns>
+                                 <contextMenu>
+                                    <ContextMenu>
+                                      <items>
+                                        <MenuItem mnemonicParsing="false" text="Refresh Tabel" />
+                                          <MenuItem mnemonicParsing="false" onAction="#btnDelete" text="Delete Data" />
+                                      </items>
+                                    </ContextMenu>
+                                 </contextMenu>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </ScrollPane>
+                  <TextField layoutX="579.0" layoutY="39.0" prefHeight="41.0" prefWidth="314.0" promptText="Pencarian" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="601.0" prefWidth="929.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Pengarang">
+   <children>
+      <AnchorPane prefHeight="601.0" prefWidth="929.0" style="-fx-background-color: #027ac0;">
+         <children>
+            <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="573.0" prefWidth="902.0" style="-fx-background-color: #ffffff;">
+               <children>
+                  <Pane layoutX="8.0" layoutY="34.0" prefHeight="532.0" prefWidth="314.0" style="-fx-border-color: #000000; -fx-background-color: #000000;">
+                     <children>
+                        <Pane layoutY="55.0" prefHeight="478.0" prefWidth="314.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000;">
+                           <children>
+                              <VBox layoutX="6.0" layoutY="39.0" prefHeight="64.0" prefWidth="298.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="ID Pengarang">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Text>
+                                    <TextField fx:id="id" prefHeight="41.0" prefWidth="298.0" />
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="8.0" layoutY="110.0" prefHeight="64.0" prefWidth="298.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nama Pengarang">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Text>
+                                    <TextField fx:id="nama" prefHeight="41.0" prefWidth="298.0" />
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="8.0" layoutY="181.0" prefHeight="64.0" prefWidth="298.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Alamat">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Text>
+                                    <TextField fx:id="alamat" prefHeight="41.0" prefWidth="298.0" />
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="8.0" layoutY="255.0" prefHeight="64.0" prefWidth="298.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="No Telepon">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Text>
+                                    <TextField fx:id="notelp" prefHeight="41.0" prefWidth="298.0" />
+                                 </children>
+                              </VBox>
+                              <JFXButton layoutX="8.0" layoutY="425.0" onAction="#btnsimpan" prefHeight="41.0" prefWidth="89.0" styleClass="nav-button" stylesheets="@../CSS/button.css" text="Simpan" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton layoutX="111.0" layoutY="425.0" onAction="#btnUpdate" prefHeight="41.0" prefWidth="89.0" styleClass="nav-button" stylesheets="@../CSS/button.css" text="Update" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton layoutX="211.0" layoutY="425.0" onAction="#btnDelete" prefHeight="41.0" prefWidth="89.0" styleClass="nav-button" stylesheets="@../CSS/button.css" text="Hapus" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </JFXButton>
+                              <VBox layoutX="8.0" layoutY="325.0" prefHeight="64.0" prefWidth="298.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Alamat Email">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Text>
+                                    <TextField fx:id="email" prefHeight="41.0" prefWidth="298.0" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </Pane>
+                        <Label layoutX="14.0" layoutY="14.0" prefHeight="31.0" prefWidth="202.0" text="DATA PENGARANG" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <ScrollPane layoutX="329.0" layoutY="87.0" prefHeight="478.0" prefWidth="566.0">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="476.0" prefWidth="884.0">
+                           <children>
+                              <TableView fx:id="tabdata" onMouseClicked="#setdariTabel" prefHeight="490.0" prefWidth="884.0" tableMenuButtonVisible="true">
+                                <columns>
+                                  <TableColumn fx:id="kolid" prefWidth="127.0" text="ID Pengarang" />
+                                  <TableColumn fx:id="kolnama" prefWidth="194.0" text="Nama Pengarang" />
+                                    <TableColumn fx:id="kolalamat" prefWidth="194.0" text="Alamat" />
+                                    <TableColumn fx:id="kolnotelp" prefWidth="194.0" text="No Telepon" />
+                                    <TableColumn fx:id="kolemail" prefWidth="194.0" text="Alama Email" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </ScrollPane>
+                  <TextField fx:id="cari" layoutX="579.0" layoutY="39.0" onKeyTyped="#cariper" prefHeight="41.0" prefWidth="314.0" promptText="Pencarian" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

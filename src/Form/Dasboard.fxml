@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="601.0" prefWidth="929.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Dasboard">
+   <children>
+      <AnchorPane layoutX="-5.0" prefHeight="601.0" prefWidth="935.0" style="-fx-background-color: #027ac0;">
+         <children>
+            <AnchorPane layoutX="14.0" layoutY="8.0" prefHeight="53.0" prefWidth="912.0" style="-fx-background-color: #ffffff;">
+               <children>
+                  <HBox layoutX="7.0" layoutY="8.0" prefHeight="39.0" prefWidth="201.0">
+                     <children>
+                        <Label prefHeight="39.0" prefWidth="155.0" text="  Jumlah Pengarang">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="39.0" prefWidth="61.0" text="   :">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="208.0" layoutY="8.0" prefHeight="39.0" prefWidth="190.0">
+                     <children>
+                        <Label prefHeight="39.0" prefWidth="155.0" text="  Jumlah Penerbit">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="39.0" prefWidth="88.0" text="   :">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="398.0" layoutY="8.0" prefHeight="39.0" prefWidth="155.0">
+                     <children>
+                        <Label prefHeight="39.0" prefWidth="135.0" text="  Jumlah Buku">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="39.0" prefWidth="78.0" text="   :">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <TextField layoutX="623.0" layoutY="7.0" prefHeight="39.0" prefWidth="281.0" promptText="Pencarian" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="14.0" layoutY="69.0" prefHeight="527.0" prefWidth="912.0" style="-fx-background-color: #ffffff;">
+               <children>
+                  <TableView layoutX="7.0" layoutY="181.0" prefHeight="342.0" prefWidth="899.0">
+                    <columns>
+                      <TableColumn prefWidth="75.0" text="C1" />
+                      <TableColumn prefWidth="75.0" text="C2" />
+                    </columns>
+                  </TableView>
+                  <Label alignment="TOP_LEFT" layoutX="7.0" layoutY="6.0" prefHeight="26.0" prefWidth="241.0" text="Perpustakaan Kampus" underline="true">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <HBox layoutX="7.0" layoutY="57.0" prefHeight="26.0" prefWidth="200.0">
+                     <children>
+                        <Label prefHeight="30.0" prefWidth="136.0" text="ID Buku">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="29.0" prefWidth="115.0" text=":" />
+                     </children>
+                  </HBox>
+                  <HBox layoutX="7.0" layoutY="97.0" prefHeight="26.0" prefWidth="200.0">
+                     <children>
+                        <Label prefHeight="26.0" prefWidth="136.0" text="ID Pengarang">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="29.0" prefWidth="115.0" text=":" />
+                     </children>
+                  </HBox>
+                  <HBox layoutX="7.0" layoutY="136.0" prefHeight="26.0" prefWidth="200.0">
+                     <children>
+                        <Label prefHeight="26.0" prefWidth="136.0" text="ID Penerbit">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="29.0" prefWidth="115.0" text=":" />
+                     </children>
+                  </HBox>
+                  <HBox layoutX="217.0" layoutY="57.0" prefHeight="26.0" prefWidth="329.0">
+                     <children>
+                        <Label prefHeight="26.0" prefWidth="193.0" text="Judul Buku">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <TextField prefHeight="26.0" prefWidth="256.0" />
+                     </children>
+                  </HBox>
+                  <HBox layoutX="217.0" layoutY="97.0" prefHeight="26.0" prefWidth="329.0">
+                     <children>
+                        <Label prefHeight="26.0" prefWidth="189.0" text="Nama Pengarang">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <TextField prefHeight="26.0" prefWidth="256.0" />
+                     </children>
+                  </HBox>
+                  <HBox layoutX="217.0" layoutY="136.0" prefHeight="26.0" prefWidth="329.0">
+                     <children>
+                        <Label prefHeight="26.0" prefWidth="189.0" text="Penerbit ">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <TextField prefHeight="26.0" prefWidth="256.0" />
+                     </children>
+                  </HBox>
+                  <HBox layoutX="560.0" layoutY="57.0" prefHeight="26.0" prefWidth="166.0">
+                     <children>
+                        <Label prefHeight="26.0" prefWidth="106.0" text="Jumlah Buku">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <TextField prefHeight="26.0" prefWidth="58.0" />
+                     </children>
+                  </HBox>
+                  <HBox layoutX="732.0" layoutY="57.0" prefHeight="26.0" prefWidth="166.0">
+                     <children>
+                        <Label prefHeight="26.0" prefWidth="106.0" text="Tahun Terbit">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <TextField prefHeight="26.0" prefWidth="58.0" />
+                     </children>
+                  </HBox>
+                  <HBox layoutX="560.0" layoutY="97.0" prefHeight="26.0" prefWidth="329.0">
+                     <children>
+                        <Label prefHeight="26.0" prefWidth="176.0" text="Alamat Pengarang">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <TextField prefHeight="26.0" prefWidth="208.0" />
+                     </children>
+                  </HBox>
+                  <HBox layoutX="560.0" layoutY="136.0" prefHeight="26.0" prefWidth="329.0">
+                     <children>
+                        <Label prefHeight="26.0" prefWidth="176.0" text="Alamat Penerbit">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <TextField prefHeight="26.0" prefWidth="208.0" />
+                     </children>
+                  </HBox>
+               </children></AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

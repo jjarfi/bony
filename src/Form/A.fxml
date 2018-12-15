@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXToolbar?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="root" onMouseDragged="#drag" onMousePressed="#press" prefHeight="438.0" prefWidth="578.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.A">
+   <children>
+      <AnchorPane prefHeight="438.0" prefWidth="583.0" style="-fx-background-color: #027ac0;">
+         <children>
+            <AnchorPane layoutX="117.0" layoutY="130.0" prefHeight="303.0" prefWidth="351.0" style="-fx-background-color: #ffffff;">
+               <children>
+                  <HBox layoutX="237.0" layoutY="250.0" prefHeight="39.0" prefWidth="100.0">
+                     <children>
+                        <JFXButton contentDisplay="GRAPHIC_ONLY" prefHeight="41.0" prefWidth="90.0" style="-fx-border-color: #027ac0;" styleClass="nav-button" stylesheets="@../CSS/button.css">
+                           <graphic>
+                              <MaterialDesignIconView fill="WHITE" glyphName="ACCOUNT_PLUS" size="22.0" />
+                           </graphic>
+                        </JFXButton>
+                        <Separator orientation="VERTICAL" prefHeight="200.0" visible="false" />
+                        <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="10.0" layoutY="10.0" prefHeight="41.0" prefWidth="90.0" style="-fx-border-color: #027ac0;" styleClass="nav-button" stylesheets="@../CSS/button.css">
+                           <graphic>
+                              <FontAwesomeIconView fill="WHITE" glyphName="DATABASE" size="16.0" />
+                           </graphic>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+                  <Separator orientation="VERTICAL" prefHeight="200.0" visible="false" />
+                  <AnchorPane prefHeight="245.0" prefWidth="351.0">
+                     <children>
+                        <Label layoutX="32.0" layoutY="21.0" text="SIGN IN">
+                           <font>
+                              <Font name="System Bold" size="19.0" />
+                           </font>
+                        </Label>
+                        <JFXCheckBox checkedColor="#027ac0" layoutX="37.0" layoutY="196.0" text="Remember me" unCheckedColor="BLACK" />
+                        <TextField fx:id="username" layoutX="33.0" layoutY="84.0" prefHeight="39.0" prefWidth="286.0" promptText="Username" styleClass="text-field" />
+                        <PasswordField fx:id="password" layoutX="33.0" layoutY="145.0" prefHeight="39.0" prefWidth="286.0" promptText="Password" />
+                     </children>
+                  </AnchorPane>
+                  <JFXButton layoutX="32.0" layoutY="250.0" onAction="#kliklogin" prefHeight="39.0" prefWidth="118.0" style="-fx-border-color: #027ac0;" styleClass="nav-button" stylesheets="@../CSS/button.css" text="Login" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </AnchorPane>
+            <JFXToolbar prefHeight="39.0" prefWidth="584.0" style="-fx-background-color: #000000;">
+               <right>
+                  <HBox prefHeight="39.0" prefWidth="70.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <JFXButton contentDisplay="GRAPHIC_ONLY" onMouseClicked="#minimize" prefHeight="39.0" prefWidth="40.0">
+                           <graphic>
+                              <MaterialDesignIconView fill="WHITE" glyphName="WINDOW_MINIMIZE" size="22.0" />
+                           </graphic>
+                        </JFXButton>
+                        <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="10.0" layoutY="10.0" onMouseClicked="#close" prefHeight="39.0" prefWidth="51.0">
+                           <graphic>
+                              <MaterialDesignIconView fill="WHITE" glyphName="WINDOW_CLOSE" size="22.0" />
+                           </graphic>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+               </right>
+               <left>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Separator orientation="VERTICAL" prefHeight="200.0" visible="false" />
+                        <MaterialDesignIconView fill="WHITE" glyphName="LIBRARY_BOOKS" size="24.0" wrappingWidth="43.0" />
+                     </children>
+                  </HBox>
+               </left></JFXToolbar>
+            <Label layoutX="136.0" layoutY="91.0" text="PERPUSTAKAAN KAMPUS" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Label>
+            <Label layoutX="188.0" layoutY="65.0" text="ADMINISTRATOR" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
