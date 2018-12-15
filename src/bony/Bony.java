@@ -23,12 +23,6 @@ public class Bony extends Application {
 
     Fungsi f = new Fungsi();
 
-//    public Bony() {
-//
-//        DBModel model = new DBModel();
-//        model.createDataBase();
-//    }
-
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource(Fungsi.LOGIN));

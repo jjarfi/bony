@@ -16,15 +16,16 @@ import java.util.logging.Logger;
  */
 public class Koneksi {
 
+    //Kelas Koneksi untuk membuat koneksi ke mysql
     public java.sql.Connection konekDB() {
         try {
-            String host = "localhost";
-            String username = "root";
-            String password = "%admin%";
-            String database = "bony";
-            String port = "3306";
+            String host = "localhost"; //alamat atau host
+            String username = "root"; //username mysql
+            String password = "%admin%"; //password user mysql
+            String database = "perpus"; //nama database
+            String port = "3306"; //default port di mysql
 
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.jdbc.Driver"); //driver koneksi dengan jdbc (java database connection
 
             java.sql.Connection connection = DriverManager.getConnection("jdbc:mysql://" + host + ":" + port + "/" + database, username, password);
             return connection;

@@ -6,7 +6,6 @@
 package Controller;
 
 import Connection.Koneksi;
-import Databases.DBProperti;
 import Model.MoPengarang;
 import java.net.URL;
 import java.sql.Connection;
@@ -42,8 +41,6 @@ import tray.notification.TrayNotification;
 public class Pengarang implements Initializable {
 
     private ObservableList<MoPengarang> data;
-    DBProperti dBProperti = new DBProperti();
-    String db = dBProperti.loadFileProperti();
     private Koneksi koneksi;
     private Connection conn;
     private ResultSet rs;

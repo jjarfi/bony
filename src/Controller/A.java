@@ -5,7 +5,7 @@
  */
 package Controller;
 
-import Databases.DBProperti;
+
 import Function.Fungsi;
 import Function.PFfungsi;
 import Function.TFfungsi;
@@ -39,6 +39,9 @@ import static javafx.stage.StageStyle.TRANSPARENT;
  * @author HellCat
  */
 public class A implements Initializable {
+    
+    //Kelas A controller merupakan kelas dari formnya A atau form Login
+    
 
     private PreparedStatement pst;
     private Connection con;
@@ -48,9 +51,6 @@ public class A implements Initializable {
     TFfungsi TFf = new TFfungsi();
     PFfungsi TPf = new PFfungsi();
     Aimpl a = new Aimpl();
-    DBProperti DBProperti = new DBProperti();
-    String db = DBProperti.loadFileProperti();
-
     @FXML
     public void drag(MouseEvent event) {
         a.drag(root, event);
@@ -83,7 +83,7 @@ public class A implements Initializable {
 
     @FXML
     public void kliklogin(ActionEvent event) {
-
+        //event login untuk login ke sistem 
         try {
             ((Node) (event.getSource())).getScene().getWindow().hide();
             Parent rocot = FXMLLoader.load(getClass().getResource(Fungsi.APLIKASI));
