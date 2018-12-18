@@ -3,7 +3,6 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXCheckBox?>
 <?import com.jfoenix.controls.JFXToolbar?>
-<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
@@ -21,35 +20,21 @@
          <children>
             <AnchorPane layoutX="117.0" layoutY="130.0" prefHeight="303.0" prefWidth="351.0" style="-fx-background-color: #ffffff;">
                <children>
-                  <HBox layoutX="237.0" layoutY="250.0" prefHeight="39.0" prefWidth="100.0">
-                     <children>
-                        <JFXButton contentDisplay="GRAPHIC_ONLY" prefHeight="41.0" prefWidth="90.0" style="-fx-border-color: #027ac0;" styleClass="nav-button" stylesheets="@../CSS/button.css">
-                           <graphic>
-                              <MaterialDesignIconView fill="WHITE" glyphName="ACCOUNT_PLUS" size="22.0" />
-                           </graphic>
-                        </JFXButton>
-                        <Separator orientation="VERTICAL" prefHeight="200.0" visible="false" />
-                        <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="10.0" layoutY="10.0" prefHeight="41.0" prefWidth="90.0" style="-fx-border-color: #027ac0;" styleClass="nav-button" stylesheets="@../CSS/button.css">
-                           <graphic>
-                              <FontAwesomeIconView fill="WHITE" glyphName="DATABASE" size="16.0" />
-                           </graphic>
-                        </JFXButton>
-                     </children>
-                  </HBox>
                   <Separator orientation="VERTICAL" prefHeight="200.0" visible="false" />
                   <AnchorPane prefHeight="245.0" prefWidth="351.0">
                      <children>
-                        <Label layoutX="32.0" layoutY="21.0" text="SIGN IN">
+                        <Label layoutX="32.0" layoutY="21.0" text="Login Aplikasi">
                            <font>
                               <Font name="System Bold" size="19.0" />
                            </font>
                         </Label>
-                        <JFXCheckBox checkedColor="#027ac0" layoutX="37.0" layoutY="196.0" text="Remember me" unCheckedColor="BLACK" />
-                        <TextField fx:id="username" layoutX="33.0" layoutY="84.0" prefHeight="39.0" prefWidth="286.0" promptText="Username" styleClass="text-field" />
-                        <PasswordField fx:id="password" layoutX="33.0" layoutY="145.0" prefHeight="39.0" prefWidth="286.0" promptText="Password" />
+                        <JFXCheckBox fx:id="sp" checkedColor="#027ac0" layoutX="37.0" layoutY="196.0" onAction="#showPass" text="Show Password" unCheckedColor="BLACK" />
+                        <TextField fx:id="username" layoutX="33.0" layoutY="84.0" onAction="#kliklogin" prefHeight="39.0" prefWidth="286.0" promptText="Username" styleClass="text-field" />
+                        <PasswordField fx:id="password" layoutX="33.0" layoutY="145.0" onAction="#kliklogin" prefHeight="39.0" prefWidth="286.0" promptText="Password" />
+                        <Label fx:id="lblpass" layoutX="70.0" layoutY="223.0" prefHeight="16.0" prefWidth="216.0" />
                      </children>
                   </AnchorPane>
-                  <JFXButton layoutX="32.0" layoutY="250.0" onAction="#kliklogin" prefHeight="39.0" prefWidth="118.0" style="-fx-border-color: #027ac0;" styleClass="nav-button" stylesheets="@../CSS/button.css" text="Login" textFill="WHITE">
+                  <JFXButton layoutX="117.0" layoutY="250.0" onAction="#kliklogin" prefHeight="39.0" prefWidth="118.0" style="-fx-border-color: #027ac0;" styleClass="nav-button" stylesheets="@../CSS/button.css" text="Login" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>

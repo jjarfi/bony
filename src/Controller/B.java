@@ -29,9 +29,10 @@ public class B implements Initializable {
 
     //  Mimpl m = new Mimpl();
     Fungsi f = new Fungsi();
+    Dasboard buk = new Dasboard();
     Aimpl a = new Aimpl();
 
-    AnchorPane dash, pengarang, penerbit, buku, laporan;
+    AnchorPane dash, pengarang, penerbit, buku,laporan;
 
     @FXML
     private AnchorPane root;
@@ -81,6 +82,7 @@ public class B implements Initializable {
             pengarang = FXMLLoader.load(getClass().getResource(Fungsi.PENGARANG)); //load form pengarang dari kelas fungsi pada package Function
             penerbit = FXMLLoader.load(getClass().getResource(Fungsi.PENERBIT)); //load form penerbit dari kelas fungsi pada package Function
             buku = FXMLLoader.load(getClass().getResource(Fungsi.BUKU)); //load form buku dari kelas fungsi pada package Function
+            
             laporan = FXMLLoader.load(getClass().getResource(Fungsi.LAPORAN)); //load form laporan dari kelas fungsi pada package Function
         } catch (IOException ex) {
 
@@ -111,6 +113,7 @@ public class B implements Initializable {
         //event klik untuk menampilkan form buku
         setNode(buku);
     }
+
      @FXML
     public void dtLaporan(ActionEvent event) {
         //event klik untuk menampilkan form laporan

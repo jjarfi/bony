@@ -75,7 +75,7 @@ public class Pengarang implements Initializable {
 
     @FXML
     private TableColumn<String, MoPengarang> kolnotelp;
-     @FXML
+    @FXML
     private TableColumn<String, MoPengarang> kolemail;
 
     @FXML
@@ -95,7 +95,15 @@ public class Pengarang implements Initializable {
     }
 
     public void konek() {
-        conn = koneksi.konekDB();
+        try {
+            conn = koneksi.konekDB();
+        } catch (Exception ex) {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Warning");
+            alert.setHeaderText("Koneksi Error" + ex);
+            alert.setContentText("Pastikan MySQL anda sudah running ..");
+        }
+
     }
 
     private void simpan() {
@@ -174,6 +182,11 @@ public class Pengarang implements Initializable {
         }
 
     }
+    @FXML
+    private void refreshTable(ActionEvent event){
+        refresh();
+        hapus();
+    }
 
     private void hapus() {
         id.setText("");
@@ -190,7 +203,7 @@ public class Pengarang implements Initializable {
         tabelper();
     }
 
-      private void tabelper() {
+    private void tabelper() {
 
         konek();
         try {
@@ -217,7 +230,8 @@ public class Pengarang implements Initializable {
         tabdata.setItems(null);
         tabdata.setItems(data);
     }
-         @FXML
+
+    @FXML
     private void setdariTabel(MouseEvent event) {
         setTable();
 
@@ -235,7 +249,8 @@ public class Pengarang implements Initializable {
 
         }
     }
-      private void update() {
+
+    private void update() {
 
         konek();
         String insert = "update pengarang set nama=?,alamat=?,nohp=?,email=? where idpengarang=?";
@@ -273,7 +288,8 @@ public class Pengarang implements Initializable {
     private void btnUpdate(ActionEvent event) {
         update();
     }
-     private void delete() {
+
+    private void delete() {
         konek();
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("HAPUS");
@@ -308,7 +324,8 @@ public class Pengarang implements Initializable {
     private void btnDelete(ActionEvent event) {
         delete();
     }
-  @FXML
+
+    @FXML
     public void cariper(KeyEvent event) throws SQLException {
 
         if (cari.getText().equals("")) {

@@ -86,7 +86,7 @@
                                                             <Font name="System Bold" size="13.0" />
                                                          </font>
                                                       </Label>
-                                                      <DatePicker fx:id="tgl" prefHeight="41.0" prefWidth="293.0" />
+                                                      <Spinner fx:id="thnbuku" prefHeight="41.0" prefWidth="293.0" />
                                                       <Pane layoutX="10.0" layoutY="404.0" prefHeight="12.0" prefWidth="287.0" />
                                                       <Label layoutX="10.0" layoutY="416.0" prefHeight="28.0" prefWidth="113.0" text="Jumlah Buku">
                                                          <font>
@@ -135,7 +135,7 @@
                                  <contextMenu>
                                     <ContextMenu>
                                       <items>
-                                        <MenuItem mnemonicParsing="false" text="Refresh Tabel" />
+                                        <MenuItem mnemonicParsing="false" onAction="#refreshTable" text="Refresh Tabel" />
                                           <MenuItem mnemonicParsing="false" onAction="#btnDelete" text="Delete Data" />
                                       </items>
                                     </ContextMenu>
@@ -145,7 +145,7 @@
                         </AnchorPane>
                     </content>
                   </ScrollPane>
-                  <TextField layoutX="579.0" layoutY="39.0" prefHeight="41.0" prefWidth="314.0" promptText="Pencarian" />
+                  <TextField fx:id="cari" layoutX="579.0" layoutY="39.0" onKeyTyped="#cariper" prefHeight="41.0" prefWidth="314.0" promptText="Pencarian" />
                </children>
             </AnchorPane>
          </children>

@@ -7,8 +7,7 @@ package Connection;
 
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import javafx.scene.control.Alert;
 
 /**
  *
@@ -32,7 +31,11 @@ public class Koneksi {
         } catch (ClassNotFoundException ex) {
             System.err.println(ex.toString());
         } catch (SQLException ex) {
-            Logger.getLogger(Koneksi.class.getName()).log(Level.SEVERE, null, ex);
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Warning");
+            alert.setHeaderText("Koneksi Error" + ex);
+            alert.setContentText("Pastikan MySQL anda sudah running ..");
+
         }
         return null;
 

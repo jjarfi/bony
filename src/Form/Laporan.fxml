@@ -20,14 +20,14 @@
                     <content>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="508.0" prefWidth="912.0">
                            <children>
-                              <TableView prefHeight="502.0" prefWidth="913.0">
+                              <TableView fx:id="tabdata" prefHeight="502.0" prefWidth="913.0">
                                 <columns>
-                                  <TableColumn prefWidth="119.0" text="ID Pengarang" />
-                                  <TableColumn prefWidth="148.0" text="Nama Pengarang" />
-                                    <TableColumn prefWidth="119.0" text="ID Penerbit" />
-                                    <TableColumn prefWidth="148.0" text="Nama Penerbit" />
-                                    <TableColumn prefWidth="133.0" text="ID Buku" />
-                                    <TableColumn prefWidth="239.0" text="Judul Buku" />
+                                  <TableColumn fx:id="kolidpengarang" prefWidth="119.0" text="ID Pengarang" />
+                                  <TableColumn fx:id="kolnamapengarang" prefWidth="148.0" text="Nama Pengarang" />
+                                    <TableColumn fx:id="kolidpenerbit" prefWidth="119.0" text="ID Penerbit" />
+                                    <TableColumn fx:id="kolnamapenerbit" prefWidth="148.0" text="Nama Penerbit" />
+                                    <TableColumn fx:id="kolidbuku" prefWidth="133.0" text="ID Buku" />
+                                    <TableColumn fx:id="koljudulbuku" prefWidth="239.0" text="Judul Buku" />
                                 </columns>
                               </TableView>
                            </children>
@@ -44,22 +44,22 @@
                         <MaterialDesignIconView fill="WHITE" glyphName="MAGNIFY" size="32.0" />
                      </graphic>
                   </JFXButton>
-                  <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="833.0" layoutY="14.0" prefHeight="44.0" prefWidth="66.0" styleClass="nav-button" stylesheets="@../CSS/button.css">
+                  <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="833.0" layoutY="14.0" onAction="#PrintBTN" prefHeight="44.0" prefWidth="66.0" styleClass="nav-button" stylesheets="@../CSS/button.css">
                      <graphic>
                         <MaterialDesignIconView fill="WHITE" glyphName="PRINTER" size="32.0" />
                      </graphic>
                   </JFXButton>
-                  <JFXCheckBox layoutX="439.0" layoutY="19.0" prefHeight="34.0" prefWidth="115.0" text="Penerbit">
+                  <JFXCheckBox fx:id="ckpenerbit" layoutX="439.0" layoutY="19.0" prefHeight="34.0" prefWidth="115.0" text="Penerbit">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font>
                   </JFXCheckBox>
-                  <JFXCheckBox layoutX="563.0" layoutY="19.0" prefHeight="34.0" prefWidth="115.0" text="Pengarang">
+                  <JFXCheckBox fx:id="ckpengarang" layoutX="563.0" layoutY="19.0" prefHeight="34.0" prefWidth="115.0" text="Pengarang">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font>
                   </JFXCheckBox>
-                  <JFXCheckBox layoutX="709.0" layoutY="19.0" prefHeight="34.0" prefWidth="92.0" text="Buku">
+                  <JFXCheckBox fx:id="ckbuku" layoutX="709.0" layoutY="19.0" prefHeight="34.0" prefWidth="92.0" text="Buku">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font>

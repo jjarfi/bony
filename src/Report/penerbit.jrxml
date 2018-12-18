@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="0a8c6cb0-c83a-4af0-8cf4-c8e6a13ed5dc">
+	<property name="ireport.zoom" value="3.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="171"/>
+	<queryString>
+		<![CDATA[SELECT
+     penerbit.`idpenerbit` AS penerbit_idpenerbit,
+     penerbit.`nama` AS penerbit_nama,
+     penerbit.`alamat` AS penerbit_alamat,
+     penerbit.`nohp` AS penerbit_nohp,
+     penerbit.`email` AS penerbit_email
+FROM
+     `penerbit` penerbit]]>
+	</queryString>
+	<field name="penerbit_idpenerbit" class="java.lang.String"/>
+	<field name="penerbit_nama" class="java.lang.String"/>
+	<field name="penerbit_alamat" class="java.lang.String"/>
+	<field name="penerbit_nohp" class="java.lang.String"/>
+	<field name="penerbit_email" class="java.lang.String"/>
+	<variable name="penerbit_nama_1" class="java.lang.Integer" resetType="Column" calculation="Count">
+		<variableExpression><![CDATA[$F{penerbit_nama}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="86" splitType="Stretch">
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="455" y="66" width="100" height="20" uuid="d6894b88-89db-46a7-ab4b-318718dc9136"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="66" width="166" height="20" uuid="3ee1221d-91ca-45b6-a546-62139e1346a7"/>
+				<textElement verticalAlignment="Bottom">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Laporan Data Penerbit]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="9" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="0" width="555" height="1" uuid="b1a4485e-c637-497e-8083-4a73dba20cc9"/>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="18" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="33" height="18" backcolor="#CCCCCC" uuid="45288ae9-60b7-4b11-a808-61e4d2d60bf8"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="33" y="0" width="92" height="18" backcolor="#CCCCCC" uuid="80ec5cf2-f205-46e0-86a7-90ccaf42c3c9"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="33" y="0" width="92" height="18" uuid="db0d27e4-b883-46ca-9741-8585cf00c22b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID Penerbit]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="33" height="18" uuid="fe9738fe-2fc8-438f-a79a-16036478457e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[No]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="125" y="0" width="102" height="18" backcolor="#CCCCCC" uuid="82fc4578-96ab-41da-8054-ffd95890b664"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="125" y="0" width="102" height="18" uuid="f1c2c9c0-ed91-4461-9366-361fe6f3bad7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nama Penerbit]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="227" y="0" width="102" height="18" backcolor="#CCCCCC" uuid="92cb4cae-3de4-4ca7-aca8-39f8f0e21083"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="227" y="0" width="102" height="18" uuid="b49a66cb-0950-4130-9095-c099d9a276d8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Alamat]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="329" y="0" width="102" height="18" backcolor="#CCCCCC" uuid="9587e082-637e-45f0-ab73-7dbc8e373353"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="329" y="0" width="102" height="18" uuid="8e92276a-6fcb-4b57-89b7-4cb114e871a5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[No Telepon]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="431" y="0" width="124" height="18" backcolor="#CCCCCC" uuid="44d914f2-7ed7-4caa-b623-33d78bedb74a"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="431" y="0" width="124" height="18" uuid="78866e2f-af70-4c73-8ab3-b51e16f1d5e8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Email]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="33" height="20" uuid="5526ba55-f7ca-487f-8ead-cb05bb31e8b7"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="33" y="0" width="92" height="20" uuid="d4ef7fc3-13d5-4736-9202-a80114cf221b"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="125" y="0" width="102" height="20" uuid="5bef4e13-382c-472d-a015-11ad41c622d4"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="227" y="0" width="102" height="20" uuid="076cc04a-387c-46ce-930c-06e890f864c4"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="329" y="0" width="102" height="20" uuid="5f12d42a-6b46-4310-8bd3-718d09c9e0c0"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="431" y="0" width="124" height="20" uuid="0af09eed-a9ee-4f34-af19-024767b8b19e"/>
+			</rectangle>
+			<textField>
+				<reportElement x="0" y="0" width="33" height="20" uuid="4ee3fcc3-9f1d-4126-b4cf-3d7140dc2de2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$V{PAGE_COUNT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="33" y="0" width="92" height="20" uuid="55680007-f558-4408-bdea-55c06ad1f20d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{penerbit_idpenerbit}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="125" y="0" width="102" height="20" uuid="7e365ec6-1cf6-4733-b8f3-daba577238ab"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{penerbit_nama}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="227" y="0" width="102" height="20" uuid="def477b1-b9ad-425b-8e7a-74d03aebda91"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{penerbit_alamat}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="331" y="0" width="100" height="20" uuid="5341cf04-b7e8-427e-b498-e5e8da9564f5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{penerbit_nohp}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="431" y="0" width="124" height="20" uuid="99d14419-e119-4bfc-8b01-41988ae06a47"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{penerbit_email}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

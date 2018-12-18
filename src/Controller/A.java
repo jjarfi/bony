@@ -5,11 +5,11 @@
  */
 package Controller;
 
-
 import Function.Fungsi;
 import Function.PFfungsi;
 import Function.TFfungsi;
 import Implementasi.Aimpl;
+import com.jfoenix.controls.JFXCheckBox;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
@@ -24,6 +24,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
@@ -32,6 +33,10 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import static javafx.stage.StageStyle.TRANSPARENT;
+import javafx.util.Duration;
+import tray.animations.AnimationType;
+import tray.notification.NotificationType;
+import tray.notification.TrayNotification;
 
 /**
  * FXML Controller class
@@ -39,10 +44,9 @@ import static javafx.stage.StageStyle.TRANSPARENT;
  * @author HellCat
  */
 public class A implements Initializable {
-    
-    //Kelas A controller merupakan kelas dari formnya A atau form Login
-    
 
+    //Kelas A controller merupakan kelas dari formnya A atau form Login
+    Fungsi funsi = new Fungsi();
     private PreparedStatement pst;
     private Connection con;
     private ResultSet rs;
@@ -51,6 +55,7 @@ public class A implements Initializable {
     TFfungsi TFf = new TFfungsi();
     PFfungsi TPf = new PFfungsi();
     Aimpl a = new Aimpl();
+
     @FXML
     public void drag(MouseEvent event) {
         a.drag(root, event);
@@ -65,6 +70,20 @@ public class A implements Initializable {
 
     @FXML
     private Button btnhapususer;
+
+    @FXML
+    private JFXCheckBox ckpenerbit;
+    
+    @FXML
+    private JFXCheckBox sp;
+    @FXML
+    private Label lblpass;
+
+    @FXML
+    private JFXCheckBox ckpengarang;
+
+    @FXML
+    private JFXCheckBox ckbuku;
 
     @FXML
     public void press(MouseEvent event) {
@@ -84,19 +103,25 @@ public class A implements Initializable {
     @FXML
     public void kliklogin(ActionEvent event) {
         //event login untuk login ke sistem 
-        try {
-            ((Node) (event.getSource())).getScene().getWindow().hide();
-            Parent rocot = FXMLLoader.load(getClass().getResource(Fungsi.APLIKASI));
-            Stage stage = new Stage();
-            Scene scene = new Scene(rocot);
-            scene.setFill(Color.TRANSPARENT);
-            stage.initStyle(TRANSPARENT);
-            stage.getIcons().add(new Image(Fungsi.ICON));
-            stage.setTitle(Fungsi.APPNAME);
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException ex) {
+        if (username.getText().equals("admin") && password.getText().equals("perpus123")) {
+            try {
+                ((Node) (event.getSource())).getScene().getWindow().hide();
+                Parent rocot = FXMLLoader.load(getClass().getResource(Fungsi.APLIKASI));
+                Stage stage = new Stage();
+                Scene scene = new Scene(rocot);
+                scene.setFill(Color.TRANSPARENT);
+                stage.initStyle(TRANSPARENT);
+                stage.getIcons().add(new Image(Fungsi.ICON));
+                stage.setTitle(Fungsi.APPNAME);
+                stage.setScene(scene);
+                stage.show();
+            } catch (IOException ex) {
 
+            }
+        } else {
+            TrayNotification tn = new TrayNotification("PERINGATAN", "Periksa Kembali Username & Password Anda !", NotificationType.NOTICE);
+            tn.setAnimationType(AnimationType.SLIDE);
+            tn.showAndDismiss(Duration.seconds(1));
         }
 
     }
@@ -108,9 +133,19 @@ public class A implements Initializable {
      * @param rb
      */
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
+    public void initialize(URL url, ResourceBundle rb
+    ) {
 //        TFf.clearTextFieldByButton(username, btnhapususer);
 //        TPf.clearPassFieldByButton(password, btnhapuspass);
+    }
+
+    @FXML
+    private void showPass(ActionEvent event) {
+        if(sp.isSelected()==true){
+            lblpass.setText(password.getText());
+        }else{
+            lblpass.setText("");
+        }
     }
 
 }

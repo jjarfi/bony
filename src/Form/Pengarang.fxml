@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.ContextMenu?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -108,6 +110,14 @@
                                     <TableColumn fx:id="kolnotelp" prefWidth="194.0" text="No Telepon" />
                                     <TableColumn fx:id="kolemail" prefWidth="194.0" text="Alama Email" />
                                 </columns>
+                                 <contextMenu>
+                                    <ContextMenu>
+                                      <items>
+                                        <MenuItem mnemonicParsing="false" onAction="#refreshTable" text="Refresh Tabel" />
+                                          <MenuItem mnemonicParsing="false" onAction="#btnDelete" text="Delete Data" />
+                                      </items>
+                                    </ContextMenu>
+                                 </contextMenu>
                               </TableView>
                            </children>
                         </AnchorPane>

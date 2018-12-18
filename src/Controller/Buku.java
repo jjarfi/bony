@@ -30,6 +30,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.util.Duration;
 import tray.animations.AnimationType;
@@ -53,6 +54,9 @@ public class Buku implements Initializable {
     String query = "";
     @FXML
     private TextField idbuku;
+    
+    @FXML
+    private TextField cari;
 
     @FXML
     private TextField judul;
@@ -69,8 +73,9 @@ public class Buku implements Initializable {
     @FXML
     private TextField namapengarang;
 
+  
     @FXML
-    private DatePicker tgl;
+    private Spinner thnbuku;
 
     @FXML
     private Spinner jumlah;
@@ -102,8 +107,6 @@ public class Buku implements Initializable {
     @FXML
     private TableColumn<String, MoBuku> koltanggal;
 
-    @FXML
-    private TextField cari;
 
     /**
      * Initializes the controller class.
@@ -120,7 +123,20 @@ public class Buku implements Initializable {
     }
 
     public void konek() {
-        conn = koneksi.konekDB();
+        try {
+            conn = koneksi.konekDB();
+        } catch (Exception ex) {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Warning");
+            alert.setHeaderText("Koneksi Error" + ex);
+            alert.setContentText("Pastikan MySQL anda sudah running ..");
+        }
+
+    }
+    @FXML
+    private void refreshTable(ActionEvent event){
+        hapus();
+        refresh();
     }
 
     private void simpan() {
@@ -154,7 +170,7 @@ public class Buku implements Initializable {
                         pst.setString(2, judul.getText());
                         pst.setString(3, idpenerbit.getValue().toString());
                         pst.setString(4, idpengarang.getValue().toString());
-                        pst.setString(5, tgl.getEditor().getText());
+                        pst.setString(5, thnbuku.getEditor().getText());
                         pst.setString(6, jumlah.getValue().toString());
                         pst.setString(7, tglpengadaan.getEditor().getText());
                         int berhasil = pst.executeUpdate();
@@ -207,7 +223,7 @@ public class Buku implements Initializable {
             pst.setString(1, judul.getText());
             pst.setString(2, idpenerbit.getValue().toString());
             pst.setString(3, idpengarang.getValue().toString());
-            pst.setString(4, tgl.getEditor().getText());
+            pst.setString(4, thnbuku.getEditor().getText());
             pst.setString(5, jumlah.getValue().toString());
             pst.setString(6, tglpengadaan.getEditor().getText());
             int berhasil = pst.executeUpdate();
@@ -284,8 +300,9 @@ public class Buku implements Initializable {
         namapengarang.setText("");
         idpenerbit.setValue(null);
         idpengarang.setValue(null);
-        tgl.getEditor().setText("");
+        thnbuku.getEditor().setText("");
         tglpengadaan.getEditor().setText("");
+        jumlah.getEditor().setText("");
 
     }
 
@@ -329,9 +346,13 @@ public class Buku implements Initializable {
     }
 
     private void spinner() {
-        SpinnerValueFactory svf = new SpinnerValueFactory.DoubleSpinnerValueFactory(1, 100);
+        SpinnerValueFactory jmlh = new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 100);
         jumlah.getStyleClass().add(Spinner.STYLE_CLASS_SPLIT_ARROWS_HORIZONTAL);
-        jumlah.setValueFactory(svf);
+        jumlah.setValueFactory(jmlh);
+        
+        SpinnerValueFactory thn = new SpinnerValueFactory.IntegerSpinnerValueFactory(1999, 2018);
+        thnbuku.getStyleClass().add(Spinner.STYLE_CLASS_SPLIT_ARROWS_HORIZONTAL);
+        thnbuku.setValueFactory(thn);
     }
 
     @FXML
@@ -433,8 +454,8 @@ public class Buku implements Initializable {
             judul.setText(pr.getJudulbuk());
             idpenerbit.setValue(pr.getIdpen());
             idpengarang.setValue(pr.getIdpenga());
-            tgl.getEditor().setText(pr.getTahunbuk());
-            //   jumlah.setValueFactory();
+            thnbuku.getEditor().setText(pr.getTahunbuk());
+            jumlah.getEditor().setText(pr.getJumlahbuk());
             tglpengadaan.getEditor().setText(pr.getTglbuk());
         } catch (Exception ex) {
 
@@ -444,6 +465,32 @@ public class Buku implements Initializable {
     @FXML
     private void setdariTabel(MouseEvent event) {
         setTable();
+
+    }
+
+    @FXML
+    public void cariper(KeyEvent event) throws SQLException {
+
+        if (cari.getText().equals("")) {
+            refresh();
+        } else {
+
+            data.clear();
+            String sql = "select * from buku where idbuku LIKE '%" + cari.getText() + "%'"
+                    + "UNION select * from buku where judul LIKE '%" + cari.getText() + "%'"
+                    + "UNION select * from buku where tahun LIKE '%" + cari.getText() + "%'";
+            try {
+                pst = (PreparedStatement) conn.prepareStatement(sql);
+                rs = pst.executeQuery();
+                while (rs.next()) {
+                    System.out.println("" + rs.getString(2));
+                    data.add(new MoBuku(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7)));
+
+                }
+                tabdata.setItems(data);
+            } catch (SQLException ex) {
+            }
+        }
 
     }
 

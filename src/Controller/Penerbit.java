@@ -94,9 +94,16 @@ public class Penerbit implements Initializable {
     }
 
     public void konek() {
-        conn = koneksi.konekDB();
-    }
+        try {
+            conn = koneksi.konekDB();
+        } catch (Exception ex) {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Warning");
+            alert.setHeaderText("Koneksi Error" + ex);
+            alert.setContentText("Pastikan MySQL anda sudah running ..");
+        }
 
+    }
     private void simpan() {
         konek();
 
