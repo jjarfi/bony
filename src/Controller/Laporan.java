@@ -22,7 +22,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperCompileManager;
 import net.sf.jasperreports.engine.JasperFillManager;
@@ -36,6 +38,8 @@ import net.sf.jasperreports.view.JasperViewer;
  * @author HellCat
  */
 public class Laporan implements Initializable {
+     @FXML
+    private TextField cari;
 
     private ObservableList<MoReport> data;
 
@@ -197,6 +201,31 @@ public class Laporan implements Initializable {
             ctkPengarang();
         } else if (ckbuku.isSelected() == true) {
             ctkBuku();
+        }
+
+    }
+     @FXML
+    public void cariper(KeyEvent event) {
+
+        if (cari.getText().equals("")) {
+            refresh();
+        } else {
+
+            data.clear();
+            String sql = "select * from buku where idbuku LIKE '%" + cari.getText() + "%'"
+                    + "UNION select * from buku where judul LIKE '%" + cari.getText() + "%'"
+                    + "UNION select * from buku where tahun LIKE '%" + cari.getText() + "%'";
+            try {
+                pst = (PreparedStatement) conn.prepareStatement(sql);
+                rs = pst.executeQuery();
+                while (rs.next()) {
+                    System.out.println("" + rs.getString(2));
+                    data.add(new MoReport(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6)));
+
+                }
+                tabdata.setItems(data);
+            } catch (SQLException ex) {
+            }
         }
 
     }

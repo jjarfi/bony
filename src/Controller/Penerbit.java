@@ -128,7 +128,7 @@ public class Penerbit implements Initializable {
                 String sql = "select * from penerbit where idpenerbit = '" + idpenerbit.getText() + "'";
                 rs = stt.executeQuery(sql);
                 if (rs.next() == true) {
-                    TrayNotification tn = new TrayNotification("WARNING", "ID Penerbit Sudah Terdaftar", NotificationType.NOTICE);
+                    TrayNotification tn = new TrayNotification("WARNING", "Maaf ID Penerbit Sudah Terdaftar", NotificationType.NOTICE);
                     tn.setAnimationType(AnimationType.SLIDE);
                     tn.showAndDismiss(Duration.seconds(1));
                 } else {

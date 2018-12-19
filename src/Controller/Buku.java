@@ -143,11 +143,11 @@ public class Buku implements Initializable {
         konek();
 
         if (idbuku.getText().isEmpty()) {
-            TrayNotification tn = new TrayNotification("WANING", "ID Penerbit Tidak Boleh Kosong", NotificationType.WARNING);
+            TrayNotification tn = new TrayNotification("WANING", "ID Buku Tidak Boleh Kosong", NotificationType.WARNING);
             tn.setAnimationType(AnimationType.POPUP);
             tn.showAndDismiss(Duration.seconds(2));
         } else if (judul.getText().isEmpty()) {
-            TrayNotification tn = new TrayNotification("WANING", "Nama Penerbit Tidak Boleh Kosong", NotificationType.WARNING);
+            TrayNotification tn = new TrayNotification("WANING", "Judul Buku Tidak Boleh Kosong", NotificationType.WARNING);
             tn.setAnimationType(AnimationType.POPUP);
             tn.showAndDismiss(Duration.seconds(2));
 
@@ -158,7 +158,7 @@ public class Buku implements Initializable {
                 String sql = "select * from buku where idbuku = '" + idbuku.getText() + "'";
                 rs = stt.executeQuery(sql);
                 if (rs.next() == true) {
-                    TrayNotification tn = new TrayNotification("WARNING", "Kode Perangkat Sudah Terdaftar", NotificationType.NOTICE);
+                    TrayNotification tn = new TrayNotification("WARNING", "Maaf ID Buku Sudah Terdaftar", NotificationType.NOTICE);
                     tn.setAnimationType(AnimationType.SLIDE);
                     tn.showAndDismiss(Duration.seconds(1));
                 } else {

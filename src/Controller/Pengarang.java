@@ -110,11 +110,11 @@ public class Pengarang implements Initializable {
         konek();
 
         if (id.getText().isEmpty()) {
-            TrayNotification tn = new TrayNotification("WANING", "ID Penerbit Tidak Boleh Kosong", NotificationType.WARNING);
+            TrayNotification tn = new TrayNotification("WANING", "ID Pengarang Tidak Boleh Kosong", NotificationType.WARNING);
             tn.setAnimationType(AnimationType.POPUP);
             tn.showAndDismiss(Duration.seconds(2));
         } else if (nama.getText().isEmpty()) {
-            TrayNotification tn = new TrayNotification("WANING", "Nama Penerbit Tidak Boleh Kosong", NotificationType.WARNING);
+            TrayNotification tn = new TrayNotification("WANING", "Nama Pengarang Tidak Boleh Kosong", NotificationType.WARNING);
             tn.setAnimationType(AnimationType.POPUP);
             tn.showAndDismiss(Duration.seconds(2));
 
@@ -130,7 +130,7 @@ public class Pengarang implements Initializable {
                 String sql = "select * from pengarang where idpengarang = '" + id.getText() + "'";
                 rs = stt.executeQuery(sql);
                 if (rs.next() == true) {
-                    TrayNotification tn = new TrayNotification("WARNING", "ID Pengarang Sudah Terdaftar", NotificationType.NOTICE);
+                    TrayNotification tn = new TrayNotification("WARNING", "Maaf ID Pengarang Sudah Terdaftar", NotificationType.NOTICE);
                     tn.setAnimationType(AnimationType.SLIDE);
                     tn.showAndDismiss(Duration.seconds(1));
                 } else {
