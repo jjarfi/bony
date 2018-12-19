@@ -6,6 +6,7 @@
 package Controller;
 
 import Connection.Koneksi;
+import Model.MoPengarang;
 import Model.MoReport;
 import com.jfoenix.controls.JFXCheckBox;
 import java.net.URL;
@@ -38,10 +39,12 @@ import net.sf.jasperreports.view.JasperViewer;
  * @author HellCat
  */
 public class Laporan implements Initializable {
-     @FXML
+
+    @FXML
     private TextField cari;
 
     private ObservableList<MoReport> data;
+    private ObservableList<MoPengarang> data2;
 
     private Koneksi koneksi;
     private Connection conn;
@@ -204,7 +207,8 @@ public class Laporan implements Initializable {
         }
 
     }
-     @FXML
+
+    @FXML
     public void cariper(KeyEvent event) {
 
         if (cari.getText().equals("")) {
@@ -214,7 +218,10 @@ public class Laporan implements Initializable {
             data.clear();
             String sql = "select * from buku where idbuku LIKE '%" + cari.getText() + "%'"
                     + "UNION select * from buku where judul LIKE '%" + cari.getText() + "%'"
-                    + "UNION select * from buku where tahun LIKE '%" + cari.getText() + "%'";
+                    + "UNION select * from pengarang where idpengarang LIKE '%" + cari.getText() + "%'"
+                    + "UNION select * from pengarang where nama LIKE '%" + cari.getText() + "%'"
+                    + "UNION select * from penerbit where idpenerbit LIKE '%" + cari.getText() + "%'"
+                    + "UNION select * from penerbit where nama LIKE '%" + cari.getText() + "%'";
             try {
                 pst = (PreparedStatement) conn.prepareStatement(sql);
                 rs = pst.executeQuery();
