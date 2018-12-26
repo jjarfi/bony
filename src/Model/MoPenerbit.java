@@ -14,6 +14,11 @@ import javafx.beans.property.StringProperty;
  */
 public class MoPenerbit {
 
+    /* Methode Setter dan Getter untuk data Penerbit,
+       methode ini berisi entitas dari penerbit yang diambil dari field2 pada databases
+       khususnya pada table penerbit
+     */
+
     private final StringProperty id;
     private final StringProperty nama;
     private final StringProperty alamat;

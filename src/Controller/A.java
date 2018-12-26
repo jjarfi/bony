@@ -6,8 +6,7 @@
 package Controller;
 
 import Function.Fungsi;
-import Function.PFfungsi;
-import Function.TFfungsi;
+
 import Implementasi.Aimpl;
 import com.jfoenix.controls.JFXCheckBox;
 import java.io.IOException;
@@ -52,10 +51,7 @@ public class A implements Initializable {
     private ResultSet rs;
     @FXML
     private AnchorPane root;
-    TFfungsi TFf = new TFfungsi();
-    PFfungsi TPf = new PFfungsi();
     Aimpl a = new Aimpl();
-
     @FXML
     public void drag(MouseEvent event) {
         a.drag(root, event);
@@ -135,8 +131,7 @@ public class A implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb
     ) {
-//        TFf.clearTextFieldByButton(username, btnhapususer);
-//        TPf.clearPassFieldByButton(password, btnhapuspass);
+
     }
 
     @FXML

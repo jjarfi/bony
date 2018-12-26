@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="root" onMouseDragged="#drag" onMousePressed="#press" prefHeight="639.0" prefWidth="1150.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.B">
+<AnchorPane id="AnchorPane" fx:id="root" onMouseDragged="#drag" onMousePressed="#press" prefHeight="639.0" prefWidth="1150.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.B">
    <children>
       <AnchorPane prefHeight="639.0" prefWidth="1150.0" style="-fx-background-color: #027ac0;">
          <children>
@@ -142,6 +142,25 @@
                                  </children>
                               </Pane>
                               <Separator layoutX="10.0" layoutY="524.0" prefWidth="200.0" visible="false" />
+                              <Pane prefHeight="42.0" prefWidth="218.0" />
+                              <Pane layoutX="10.0" layoutY="468.0" prefHeight="38.0" prefWidth="218.0">
+                                 <children>
+                                    <HBox alignment="CENTER" prefHeight="39.0" prefWidth="218.0">
+                                       <children>
+                                          <JFXButton contentDisplay="GRAPHIC_ONLY" prefHeight="39.0" prefWidth="62.0">
+                                             <graphic>
+                                                <MaterialDesignIconView fill="WHITE" glyphName="HELP_CIRCLE" size="20.0" />
+                                             </graphic>
+                                          </JFXButton>
+                                          <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="88.0" layoutY="10.0" prefHeight="39.0" prefWidth="62.0">
+                                             <graphic>
+                                                <MaterialDesignIconView fill="WHITE" glyphName="COMMENT_ACCOUNT" size="20.0" />
+                                             </graphic>
+                                          </JFXButton>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </Pane>
                            </children>
                         </VBox>
                      </children>

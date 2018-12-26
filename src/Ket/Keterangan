@@ -1,0 +1,65 @@
+Aplikasi pendataan buku serderhana ini memiliki 12 Packages dan setiap packages memiliki source code.
+1. Packages CSS
+   packages ini berisi cascading style sheet atau css, untuk style pada setiap button di setiap class (yaitu 
+   button Simpan, update dan delete) stylenya berupa onHover, Onpressed dan color button; 
+2. Packages Connection
+   packages ini berisi fungsi koneksi untuk menghubungkan antara frontend dengan Backend menggunakan JDBC
+   (java database connection) dengan backend yang digunakan ialah MySQL
+3. Packages Controller
+   packages ini berisi contoller dari setiap form
+   yaitu form login = A
+         form Menu Utama = B
+         form Buku = Buku
+         dan seterusnya,
+   bisa dilihat didalam packages controller tersebut.
+4. Packages Form
+   packages ini berisi FXML atau tampilan antarmuka
+   (FXML) merupakan pengembangan lanjut dari xml (extensible markup language) yang dikembangkan oleh oracle khususnya
+   untuk javafx.
+   Form yang ada ialah :
+   A.fxml untuk login.
+   B.fxml untuk menu utama
+   Buku.fxml untuk tampilan input & output data buku
+   dan seterusnya
+5. Packages Function
+   packages ini berisi class Fungsi.java yang berisi deklarasi dari icon,nama aplikasi dan nama setiap form
+   yang bertujuan untuk mempermudah pengembang untuk melakukan pemanggilan.
+6. Packages Icon
+   packages ini berisi icon aplikasi atau icon launcher app dengan nama icon.png
+7. Packages Implementasi 
+   packages ini berisi fungsi untuk drag and press serta minimize dan close app
+   pada setiap ini menggunakan fungsi MouseEvent atau onMouseClick
+8. Packages Ket
+   tentang keterangan
+9. Packages Model
+   packages ini berisi tentang methode setter dan getter dari setiap entitas yang diperlukan dan yang terdapat
+   pada setiap form
+10. Packages MySQL
+   packages ini berisi file perpus.sql
+11. Packages Report 
+    packages ini berisi tentang file jrxml dan jasper untuk file report dari data buku, data penerbit, dan data pengarang
+12. Packages bonny
+    merupakan packages yang berisi class main dari aplikasi ini
+
+
+Library-Library atau Thirdparty yang digunakan
+TrayNotification
+controlsfx-8.40.12
+fontawesomefx-8.9
+jfoenix
+MySQL JDBC 5.1.23
+commons-beanutils-1.9.0.jar
+commons-codec-1.5
+commons-collections-3.2.1
+commons-digester-2.1.
+commons-logging-1.1.1.
+groovy-all-2.4.3
+iText-2.1.7.
+jasperreports-6.2.0
+
+*catatan
+file thirdparty terdapat di folder lib
+
+
+   
+

@@ -13,7 +13,10 @@ import javafx.beans.property.StringProperty;
  * @author HellCat
  */
 public class MoBuku {
-
+/* Methode Setter dan Getter untuk data buku,
+   methode ini berisi entitas dari buku yang diambil dari field2 pada databases
+   khususnya pada table buku
+*/
     private final StringProperty idbuk;
     private final StringProperty judulbuk;
     private final StringProperty idpen;

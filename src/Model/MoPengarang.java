@@ -13,6 +13,11 @@ import javafx.beans.property.StringProperty;
  * @author HellCat
  */
 public class MoPengarang {
+
+    /* Methode Setter dan Getter untuk data Pengarang,
+   methode ini berisi entitas dari Pengarang yang diambil dari field2 pada databases
+   khususnya pada table Pengarang
+     */
     private final StringProperty id;
     private final StringProperty nama;
     private final StringProperty alamat;

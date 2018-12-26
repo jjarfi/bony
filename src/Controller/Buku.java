@@ -135,11 +135,13 @@ public class Buku implements Initializable {
     }
     @FXML
     private void refreshTable(ActionEvent event){
+        //event  refresh tables dari klik kanan pada table
         hapus();
         refresh();
     }
 
     private void simpan() {
+        //me
         konek();
 
         if (idbuku.getText().isEmpty()) {

@@ -13,6 +13,11 @@ import javafx.beans.property.StringProperty;
  * @author HellCat
  */
 public class MoDashboard {
+      /* Methode Setter dan Getter untuk data pengarang, penerbit dan buku,
+        hal ini dikarenakan setiap tabel antara penerbit dan pengarang berelasi ke tabel buku
+        dengan relasi one to many
+        methode ini digunakan hanya untuk mempermudah melakukan pencarian
+     */
     private final StringProperty idbuku;
     private final StringProperty idpengarang;
     private final StringProperty idpenerbit;
